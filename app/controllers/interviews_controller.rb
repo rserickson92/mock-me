@@ -23,5 +23,6 @@ class InterviewsController < ApplicationController
   end
 
   def show
+    
   end
 end

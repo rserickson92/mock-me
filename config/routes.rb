@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'users#new'
   resources :users, only: [:create, :show] do
-    resources :interviews, only: [:new, :create, :destroy, :index]
+    resources :interviews, only: [:new, :create, :destroy, :index, :show]
   end
   resources :posts, only: [:create, :destroy, :index]
   resources :sessions, only: [:create, :destroy]

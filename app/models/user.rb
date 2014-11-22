@@ -6,7 +6,11 @@ class User < ActiveRecord::Base
 	def get_interviews
 		interviews = []
 		self.interviews.each do |interview|
-			interviews << {host: User.find(interview.host).name, users: interview.get_users}
+			interviews << {
+				host: User.find(interview.host).name, 
+				users: interview.get_users, 
+				iid: interview.id
+			}
 		end
 		interviews
 	end

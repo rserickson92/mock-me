@@ -1,3 +1,4 @@
 h3 = locals[:host]
 - locals[:users].each do |user|
   p = user
+= link_to "Interview is live!", user_interview_path(user_id: locals[:iid]), remote: true
