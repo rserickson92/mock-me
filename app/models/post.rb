@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 		reqs = []
 		posts = Post.all
   	posts.each do |post|
-  		reqs << {body: post.body}
+  		reqs << {body: post.body, username: post.user.name, uid: post.user_id}
   	end
   	reqs
 	end

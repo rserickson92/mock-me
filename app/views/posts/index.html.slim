@@ -1,0 +1,6 @@
+/p = get_random_question
+.interview-requests
+  - @reqs.each do |req|
+    h3 = req[:username]
+  	p = req[:body]
+    p = link_to "Accept", new_user_interview_path(user_id: req[:uid])
