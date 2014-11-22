@@ -1,10 +1,6 @@
 class PostController < ApplicationController
   def index
-  	@reqs = []
-  	posts = Post.all
-  	posts.each do |post|
-  		@reqs << post.body
-  	end
+  	#@reqs = Post.get_all
   end
 
   def new

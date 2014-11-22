@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'slim-rails', '~> 2.1.5'
 gem 'foundation-rails'
+gem 'faraday', '~> 0.9.0'
+gem 'nokogiri', '~> 1.6.4.1'
 
 #gem 'paperclip', '~> 4.2.0'
 
