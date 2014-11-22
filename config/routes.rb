@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'post#index'
-  resources :users, only: [:new, :show]
+  resources :users, only: [:new, :show] do
+    resources :interviews, only: [:new, :destroy, :index]
+  end
+  resources :posts, only: [:new, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
