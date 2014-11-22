@@ -1,19 +1,6 @@
 Rails.application.routes.draw do
-  get 'interview/new'
-
-  get 'interview/destroy'
-
-  get 'interview/index'
-
-  get 'post/index'
-
-  get 'post/new'
-
-  get 'post/destroy'
-
-  get 'user/new'
-
-  get 'user/show'
+  root 'post#index'
+  resources :users, only: [:new, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
