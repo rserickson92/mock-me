@@ -1,3 +1,16 @@
+- content_for :nav_bar do
+	= render "sessions/session_info"
+= render 'layouts/nav'
+
 - if @is_host
-  p = get_random_question
-#firepad data-fire-id="#{@fbid}"
+  .row
+    .large-12.columns
+      h4 = get_random_question
+.row
+  .large-12.columns
+    #firepad data-fire-id="#{@fbid}"
+  /.large-1.columns
+  /  .range-slider.vertical-range data-slider=true data-options="vertical: true;"
+  /    span.range-slider-handle role="slider" tabindex="0"
+  /    span.range-slider-active-segment
+  /    input type="hidden"
