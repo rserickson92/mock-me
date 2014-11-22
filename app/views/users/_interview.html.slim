@@ -1,4 +1,12 @@
-h3 = locals[:host]
-- locals[:users].each do |user|
-  p = user
-= link_to "Interview is live!", user_interview_path(user_id: current_user.id, id: locals[:iid])
+.interview
+  .row
+    .large-6.columns
+      h3 = "Host: #{display_name locals[:host]}"
+    .large-6.columns.right
+      p Interview is live!
+  .row
+    .large-6.columns
+      h4 = "Members: #{locals[:users].map{|u| display_name(u) }.join(", ")}"
+    .large-6.columns.right
+      = link_to "->", user_interview_path(user_id: current_user.id, id: locals[:iid]), \
+        class: "button small round radius success"

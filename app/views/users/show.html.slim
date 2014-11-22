@@ -1,5 +1,9 @@
-h1 = "You are: #{current_user.name}"
-h2 Your interviews:
-#user-interviews
-  - @interviews.each do |interview|
-    = render "interview", locals: interview
+- content_for :nav_bar do
+	= render "sessions/session_info"
+= render 'layouts/nav'
+
+.row#user-interviews
+  .large-12.columns
+		h2 Your interviews:
+		- @interviews.each do |interview|
+		  = render "interview", locals: interview
