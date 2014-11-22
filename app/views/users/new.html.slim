@@ -1,2 +1,5 @@
-h1 User#new
-p Find me in app/views/user/new.html.slim
+= simple_form_for @user do |f|
+  = f.input :name
+  = f.input :password_digest
+  = f.input :password_confirmation
+  = f.button :submit, "Log In"

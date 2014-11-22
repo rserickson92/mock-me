@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122060309) do
+ActiveRecord::Schema.define(version: 20141122070337) do
 
   create_table "interviews", force: true do |t|
     t.integer  "start_time"
@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20141122060309) do
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.string   "password"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_confirmation"
   end
 
   create_table "users_and_interviews_intermediate_tables", force: true do |t|
