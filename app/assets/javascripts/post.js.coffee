@@ -4,6 +4,6 @@
 
 $( ->
 	$('#new_post').on('ajax:success', (e, data, status, xhr) ->
-		$('#interview-requests').append data
+		$('#interview-requests').prepend data
 	)
 )

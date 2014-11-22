@@ -4,7 +4,8 @@
 
 $ ->
 	if $('#firepad').length > 0
-		firepadRef = new Firebase("https://mock-me.firebaseio.com/firepads/#{Math.floor(100000000 + Math.random() * 900000000)}")
+		fire_id = $('#firepad').data('fire-id')
+		firepadRef = new Firebase("https://mock-me.firebaseio.com/firepads/#{fire_id}")
 		editor = ace.edit('firepad')
 		firepad = Firepad.fromACE(firepadRef, editor)
 

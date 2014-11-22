@@ -23,6 +23,8 @@ class InterviewsController < ApplicationController
   end
 
   def show
-    
+    i = Interview.find(params[:id])
+    @fbid = i.created_at.to_i
+    @is_host = i.host == current_user.id
   end
 end

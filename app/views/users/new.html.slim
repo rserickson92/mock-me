@@ -1,5 +1,12 @@
-= simple_form_for @user, url: sessions_path do |f|
-  = f.input :name, label: "Username"
-  = f.input :password, label: "Password"
-  /= f.input :password_confirmation
-  = f.button :submit, "Log In"
+.row.centered
+  .large-12.columns
+    h1 Mock Me
+    h4.subheader Because coding interviews are stressful as $#!+
+.row
+  .large-6.small-centered.columns
+		= simple_form_for @user, url: sessions_path do |f|
+		  = f.input :name, label: "Username"
+		  = f.input :password, label: "Password"
+		  /= f.input :password_confirmation
+		  .centered
+		    = f.button :submit, "Log In"

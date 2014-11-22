@@ -1,10 +1,14 @@
-/p = get_random_question
-.new-request-form
-  = simple_form_for @post, remote: true do |f|
-    = f.input :body, as: :text, label: false
-    = f.button :submit, "Create Interview Request"
-#interview-requests
-  - @reqs.each do |req|
-    = render 'post', locals: req
-= link_to "Log Out", session_path(current_user.id), method: :delete, class: "button"
-= link_to "My Profile", user_path(current_user.id), class: "button"
+- content_for :nav_bar do
+	= render "sessions/session_info"
+= render 'layouts/nav'
+
+.row
+  .large-12.columns
+		.new-request-form
+		  = simple_form_for @post, remote: true do |f|
+		    = f.input :body, as: :text, label: false
+		    .centered
+		    	= f.button :submit, "Create Interview Request", class: "small"
+		#interview-requests
+		  - @reqs.each do |req|
+		    = render 'post', locals: req
