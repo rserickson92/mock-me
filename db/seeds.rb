@@ -5,5 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-Post.create [{body: "foo"}, {body: "bar"}, {body: "baz"}] 
+ 
+User.create [{name: "Ryan"}, {name: "Stuart"}, {name: "Ashley"}]
+Post.create [
+	{body: "foo", user: User.find_by_name("Ryan")}, 
+	{body: "bar", user: User.find_by_name("Stuart")}, 
+	{body: "baz", user: User.find_by_name("Ashley")}
+] 
