@@ -1,6 +1,10 @@
 /p = get_random_question
+.new-request-form
+  = simple_form_for @post do |f|
+    = f.input :body, as: :text, label: false
+    = f.button :submit, "Create Interview Request"
 .interview-requests
   - @reqs.each do |req|
     h3 = req[:username]
   	p = req[:body]
-    p = link_to "Accept", new_user_interview_path(user_id: req[:uid])
+    p = link_to "Accept", new_user_interview_path(req[:uid])
