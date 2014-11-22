@@ -11,7 +11,16 @@ User.create [
 	{name: "Stuart", password: 'derpa'}, 
 	{name: "Ashley", password: 'derpaderp'}]
 Post.create [
-	{body: "foo", user: User.find_by_name("Ryan")}, 
-	{body: "bar", user: User.find_by_name("Stuart")}, 
-	{body: "baz", user: User.find_by_name("Ashley")}
+	{
+		body: "I've landed an interview at Google (no, really) and am seriously in need of algorithms practice.", 
+		user: User.find_by_name("Ryan")
+	}, 
+	{
+		body: "I have my first phone screen ever coming up and I don't know what to expect...", 
+		user: User.find_by_name("Stuart")
+	}, 
+	{
+		body: "I'm going onsite with Palantir next week. HELP.", 
+		user: User.find_by_name("Ashley")
+	}
 ] 
