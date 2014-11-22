@@ -1,11 +1,9 @@
 /p = get_random_question
 .new-request-form
-  = simple_form_for @post do |f|
+  = simple_form_for @post, remote: true do |f|
     = f.input :body, as: :text, label: false
     = f.button :submit, "Create Interview Request"
-.interview-requests
+#interview-requests
   - @reqs.each do |req|
-    h3 = req[:username]
-  	p = req[:body]
-    p = link_to "Accept", new_user_interview_path(req[:uid])
+    = render 'post', locals: req
 = link_to "Log Out", session_path(current_user.id), method: :delete, class: "button"
