@@ -1,2 +1,14 @@
-h1 Sessions#new
-p Find me in app/views/sessions/new.html.slim
+.row.centered
+  .large-12.columns
+    h1 Mock Me
+    h4.subheader Practice with friends! Because coding interviews are stressful as $#!+
+.row
+  .large-6.small-centered.columns
+		= simple_form_for @user do |f|
+		  = f.input :name, label: "Username"
+		  = f.input :password, label: "Password"
+		  /= f.input :password_confirmation
+		  .centered
+		    = f.button :submit, "Log In"
+		  .centered
+		    = link_to "Sign Up", new_user_path
