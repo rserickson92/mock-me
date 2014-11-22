@@ -1,2 +1,5 @@
-h1 User#show
-p Find me in app/views/user/show.html.slim
+h1 = "You are: #{current_user.name}"
+h2 Your interviews:
+#user-interviews
+  - @interviews.each do |interview|
+    = render "interview", locals: interview

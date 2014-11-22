@@ -15,5 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    user = User.find(params[:id])
+    @interviews = user.get_interviews
   end
 end
