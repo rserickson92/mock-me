@@ -1,5 +1,5 @@
-= simple_form_for @user do |f|
-  = f.input :name
-  = f.input :password_digest
-  = f.input :password_confirmation
+= simple_form_for @user, url: sessions_path do |f|
+  = f.input :name, label: "Username"
+  = f.input :password, label: "Password"
+  /= f.input :password_confirmation
   = f.button :submit, "Log In"

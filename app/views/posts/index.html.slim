@@ -8,3 +8,4 @@
     h3 = req[:username]
   	p = req[:body]
     p = link_to "Accept", new_user_interview_path(req[:uid])
+= link_to "Log Out", session_path(current_user.id), method: :delete, class: "button"
