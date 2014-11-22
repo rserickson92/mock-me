@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122070337) do
+ActiveRecord::Schema.define(version: 20141122102803) do
 
   create_table "interviews", force: true do |t|
     t.integer  "start_time"
     t.integer  "length"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "host"
+  end
+
+  create_table "interviews_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "interview_id"
   end
 
   create_table "posts", force: true do |t|
@@ -33,11 +39,6 @@ ActiveRecord::Schema.define(version: 20141122070337) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_confirmation"
-  end
-
-  create_table "users_and_interviews_intermediate_tables", force: true do |t|
-    t.integer "user_id"
-    t.integer "interview_id"
   end
 
 end
