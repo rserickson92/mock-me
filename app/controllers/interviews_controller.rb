@@ -6,7 +6,7 @@ class InterviewsController < ApplicationController
   	else
   		interview = Interview.create host: current_user.id
   		poster = User.find(poster_id)
-  		interview.users << poster
+  		#interview.users << poster
   		poster.interviews << interview
   		current_user.interviews << interview
   		redirect_to posts_path
@@ -20,5 +20,8 @@ class InterviewsController < ApplicationController
   end
 
   def index
+  end
+
+  def show
   end
 end
